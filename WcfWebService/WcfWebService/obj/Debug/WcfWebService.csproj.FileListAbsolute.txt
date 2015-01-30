@@ -1,0 +1,4 @@
+D:\ApplicationInfo\WebService\WcfWebService\WcfWebService\bin\WcfWebService.dll
+D:\ApplicationInfo\WebService\WcfWebService\WcfWebService\bin\WcfWebService.pdb
+D:\ApplicationInfo\WebService\WcfWebService\WcfWebService\obj\Debug\WcfWebService.dll
+D:\ApplicationInfo\WebService\WcfWebService\WcfWebService\obj\Debug\WcfWebService.pdb

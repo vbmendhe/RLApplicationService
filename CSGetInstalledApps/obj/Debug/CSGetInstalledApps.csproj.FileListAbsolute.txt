@@ -1,0 +1,30 @@
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe.config
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csprojResolveAssemblyReference.cache
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.Form1.resources
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.Properties.Resources.resources
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csproj.GenerateResource.Cache
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.pdb
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.exe
+c:\users\ken tucker\documents\visual studio 2012\Projects\CSGetInstalledApps\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.pdb
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe.config
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.pdb
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.ApplicationForm.resources
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.Properties.Resources.resources
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csproj.GenerateResource.Cache
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.exe
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.pdb
+C:\Users\vikas.mendhe\Desktop\PowerShell\C#\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csprojResolveAssemblyReference.cache
+D:\SoftwareService\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe.config
+D:\SoftwareService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.exe
+D:\SoftwareService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.pdb
+D:\RLApplicationService\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe.config
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.exe
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.pdb
+D:\RLApplicationService\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.exe
+D:\RLApplicationService\CSGetInstalledApps\bin\Debug\CSGetInstalledApps.pdb
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csprojResolveAssemblyReference.cache
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.ApplicationForm.resources
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.Properties.Resources.resources
+D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csproj.GenerateResource.Cache
