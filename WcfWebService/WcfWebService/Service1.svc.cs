@@ -59,7 +59,7 @@ namespace WcfWebService
                         cmdIns.Parameters.Add("@Version", mo.Version);
                         cmdIns.Parameters.Add("@Vendor", mo.Vendor);
                         cmdIns.Parameters.Add("@CreatedDate", mo.CreatedDate);
-                        cmdIns.Parameters.Add("@MachineName", Environment.MachineName);
+                        cmdIns.Parameters.Add("@MachineName", mo.MachineName);
 
                         cmdIns.ExecuteNonQuery();
                         cmdIns.Parameters.Clear();

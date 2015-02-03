@@ -6,3 +6,6 @@ D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMail
 D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.csproj.GenerateResource.Cache
 D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.exe
 D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.pdb
+D:\RLApplicationService\AttendanceMailMerge\AttendanceMailMerge\bin\Debug\AttendanceMailMerge.exe.config
+D:\RLApplicationService\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.exe
+D:\RLApplicationService\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.pdb

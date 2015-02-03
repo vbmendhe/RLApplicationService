@@ -134,7 +134,7 @@ namespace SimpleService
             
             System.IO.File.WriteAllText(path + "\\Jason_" + DateTime.Now.ToString("yyyyMMdd_hhss") + ".txt", json);
 
-            bool wcfservice = IsReachableUri("http://localhost/RLApplicationService/");
+            bool wcfservice = IsReachableUri("http://192.168.150.5/RLApplicationService/");
 
             if (wcfservice)
             {

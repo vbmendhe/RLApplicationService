@@ -8,3 +8,6 @@ D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.csproj.Gene
 D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.exe
 D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.pdb
 D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.csprojResolveAssemblyReference.cache
+D:\RLApplicationService\AttendanceApp\AttendanceApp\bin\Debug\AttendanceApp.exe.config
+D:\RLApplicationService\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.exe
+D:\RLApplicationService\AttendanceApp\AttendanceApp\obj\Debug\AttendanceApp.pdb

@@ -25,7 +25,7 @@ namespace CSGetInstalledApps
        
         private void LoadSoftwareList()
         {
-            bool wcfservice = IsReachableUri("http://localhost/RLApplicationService/");
+            bool wcfservice = IsReachableUri("http://192.168.150.5/RLApplicationService/");
             
             ManagementObjectCollection moReturn;  
             ManagementObjectSearcher moSearch;

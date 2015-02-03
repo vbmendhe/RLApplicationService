@@ -15,4 +15,3 @@ D:\RLApplicationService\WcfWebService\WcfWebService\obj\Release\WcfWebService.dl
 D:\RLApplicationService\WcfWebService\WcfWebService\bin\WcfWebService.dll
 D:\RLApplicationService\WcfWebService\WcfWebService\bin\WcfWebService.pdb
 D:\RLApplicationService\WcfWebService\WcfWebService\obj\Release\WcfWebService.pdb
-D:\RLApplicationService\WcfWebService\WcfWebService\obj\Release\WcfWebService.csprojResolveAssemblyReference.cache
