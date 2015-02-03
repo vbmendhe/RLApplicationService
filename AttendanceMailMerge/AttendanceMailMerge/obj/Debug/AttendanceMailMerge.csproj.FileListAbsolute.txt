@@ -1,0 +1,8 @@
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\bin\Debug\AttendanceMailMerge.exe.config
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\bin\Debug\AttendanceMailMerge.exe
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\bin\Debug\AttendanceMailMerge.pdb
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.Form1.resources
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.Properties.Resources.resources
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.csproj.GenerateResource.Cache
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.exe
+D:\RLRepository\AttendanceMailMerge\AttendanceMailMerge\obj\Debug\AttendanceMailMerge.pdb

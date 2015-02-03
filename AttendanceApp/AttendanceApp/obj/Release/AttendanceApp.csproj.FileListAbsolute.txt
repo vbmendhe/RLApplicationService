@@ -1,0 +1,10 @@
+D:\AttendanceApp\AttendanceApp\AttendanceApp\bin\Release\AttendanceApp.exe.config
+D:\AttendanceApp\AttendanceApp\AttendanceApp\bin\Release\AttendanceApp.exe
+D:\AttendanceApp\AttendanceApp\AttendanceApp\bin\Release\AttendanceApp.pdb
+D:\AttendanceApp\AttendanceApp\AttendanceApp\bin\Release\EPPlus.dll
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.AttendanceForm.resources
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.Properties.Resources.resources
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.csproj.GenerateResource.Cache
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.exe
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.pdb
+D:\AttendanceApp\AttendanceApp\AttendanceApp\obj\Release\AttendanceApp.csprojResolveAssemblyReference.cache
