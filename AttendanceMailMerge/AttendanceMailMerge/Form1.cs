@@ -16,83 +16,70 @@ namespace AttendanceMailMerge
 {
     public partial class Form1 : Form
     {
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
         public Form1()
         {
             InitializeComponent();
+            LoadEmployeeData();
+        }
+
+        public void LoadEmployeeData()
+        {
+             //Load EmailIDs
+             var EmailListFile = new FileInfo("D:\\AttendanceApp\\DB\\ReportingManager.xlsx");
+             using (var package = new ExcelPackage(EmailListFile))
+             {
+                 ExcelWorkbook workBook = package.Workbook;
+                 if (workBook != null)
+                 {
+                     if (workBook.Worksheets.Count > 0)
+                     {
+                         ExcelWorksheet currentWorksheet = workBook.Worksheets.First();
+
+                         for (int rowNumber = 2; rowNumber <= currentWorksheet.Dimension.End.Row; rowNumber++)
+                         {
+                             if (currentWorksheet.Cells[rowNumber, 1].Value != null)
+                             {
+                                 String MgrName = currentWorksheet.Cells[rowNumber, 3].Value.ToString();
+                                 String MgrEmailId = currentWorksheet.Cells[rowNumber, 4].Value.ToString();
+
+                                 if (!dictionary.ContainsKey(MgrName))
+                                 {
+                                     dictionary.Add(MgrName, MgrEmailId);
+                                     comboBox1.Items.Add(MgrName);
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            {
-                //string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=\\192.168.105.26\share\CardV3.mdb";
+            string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=D:\AttendanceApp\DB\CardV3.mdb";
+            string month = dateTimeStart.Value.ToString("MMMM");
+            string CardHoldNo = "12345";
 
-                // create an open the connection     
-                //OleDbConnection conn = new OleDbConnection(conString);
+            // create an open the connection     
+            OleDbConnection conn = new OleDbConnection(conString);
+            conn.Open();
 
-                //conn.Open();
+            // create the DataSet
+            DataSet ds = new DataSet();
 
-                int startRow = 3;
-                int columnNo = 0;
-                int columnLOP = 38;
-                int columnWFH = 39;
+            // create the adapter and fill the DataSet
+            string Query = "SELECT DISTINCT IODate FROM IOData WHERE HOLDERNAME='" + CardHoldNo + "' AND  MONTH(IODate)=" + month + " AND YEAR(IODate)=2015";
 
-                //// Get the file we are going to process
-                var existingFile = new FileInfo("D:\\AttendanceApp\\DB\\MasterAttendanceRegister.xlsx");
-                //var existingFile = new FileInfo(@"\\192.168.105.26\\share\\MasterAttendanceRegister.xlsx");
+            OleDbDataAdapter adapter = new OleDbDataAdapter(Query, conn);
 
-                // Open and read the XlSX file.
-                using (var package = new ExcelPackage(existingFile))
-                {
-                    // Get the work book in the file
-                    ExcelWorkbook workBook = package.Workbook;
-                    if (workBook != null)
-                    {
-                        if (workBook.Worksheets.Count > 0)
-                        {
-                            // Get the first worksheet
-                            ExcelWorksheet currentWorksheet = workBook.Worksheets.First();
+            adapter.Fill(ds);     
+        }
 
-                            //Skip first four columns
-                            //columnNo = 4 + Convert.ToInt32(theDate);
-
-                            // read each row from the start of the data (start row + 1 header row) to the end of the spreadsheet.
-                            for (int rowNumber = 3; rowNumber <= currentWorksheet.Dimension.End.Row; rowNumber++)
-                            {
-                                if (currentWorksheet.Cells[startRow, 1].Value != null)
-                                {
-                                    // read some data
-                                    String colEmpId = currentWorksheet.Cells[startRow, 1].Value.ToString();
-                                    String colActive = currentWorksheet.Cells[startRow, 4].Value.ToString();
-
-                                    if ((colEmpId != null) && (colActive.ToString() == "A"))
-                                    {
-                                    }
-
-                                    //Leave Info
-                                    object m2 = currentWorksheet.Cells[rowNumber, 38].Value;
-                                    object formula1 = currentWorksheet.Cells[rowNumber, 38].Formula;
-                                    int LeaveCount = 0;
-                                    LeaveCount = Convert.ToInt32(m2);
-
-                                    if (LeaveCount > 5)
-                                    {
-                                        currentWorksheet.Cells[startRow, columnLOP].Value = LeaveCount;
-                                        currentWorksheet.Cells[startRow, columnLOP].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                                        currentWorksheet.Cells[startRow, columnLOP].Style.Fill.BackgroundColor.SetColor(Color.Red);
-                                        currentWorksheet.Cells[startRow, columnLOP].Formula = formula1.ToString();
-                                    }                                 
-                                }
-
-                                startRow = startRow + 1;
-                            }
-                        }
-
-                        package.Save();
-
-                        MessageBox.Show("Attendance Excel Updated.");
-                    }
-                }
-            }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Form1.ActiveForm.Close();
         }
     }
 }

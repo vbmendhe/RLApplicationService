@@ -1,0 +1,17 @@
+D:\RLApplicationService\SimpleService\SimpleService\bin\Release\SimpleService.exe.config
+D:\RLApplicationService\SimpleService\SimpleService\bin\Release\SimpleService.exe
+D:\RLApplicationService\SimpleService\SimpleService\bin\Release\SimpleService.pdb
+D:\RLApplicationService\SimpleService\SimpleService\obj\Release\SimpleService.ProjectInstaller.resources
+D:\RLApplicationService\SimpleService\SimpleService\obj\Release\SimpleService.csproj.GenerateResource.Cache
+D:\RLApplicationService\SimpleService\SimpleService\obj\Release\SimpleService.exe
+D:\RLApplicationService\SimpleService\SimpleService\obj\Release\SimpleService.pdb
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\bin\Release\AttendanceService.exe.config
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\obj\Release\SimpleService.ProjectInstaller.resources
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\obj\Release\SimpleService.csproj.GenerateResource.Cache
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\bin\Release\AttendanceService.exe
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\bin\Release\AttendanceService.pdb
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\obj\Release\AttendanceService.exe
+D:\RLApplicationService\HRMSAttendanceService\SimpleService\obj\Release\AttendanceService.pdb
+D:\RLApplicationService\AttendanceService\SimpleService\bin\Release\AttendanceService.exe.config
+D:\RLApplicationService\AttendanceService\SimpleService\obj\Release\AttendanceService.exe
+D:\RLApplicationService\AttendanceService\SimpleService\obj\Release\AttendanceService.pdb

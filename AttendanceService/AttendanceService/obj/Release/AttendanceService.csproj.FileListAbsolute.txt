@@ -1,0 +1,8 @@
+D:\RLApplicationService\AttendanceService\AttendanceService\bin\Release\AttendanceService.exe.config
+D:\RLApplicationService\AttendanceService\AttendanceService\bin\Release\AttendanceService.exe
+D:\RLApplicationService\AttendanceService\AttendanceService\bin\Release\AttendanceService.pdb
+D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\SimpleService.ProjectInstaller.resources
+D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.csproj.GenerateResource.Cache
+D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.exe
+D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.pdb
+D:\RLApplicationService\AttendanceService\AttendanceService\bin\Release\EPPlus.dll

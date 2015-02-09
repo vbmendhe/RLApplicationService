@@ -1,0 +1,7 @@
+D:\RLApplicationService\SimpleService\SimpleService\obj\Debug\SimpleService.ProjectInstaller.resources
+D:\RLApplicationService\SimpleService\SimpleService\obj\Debug\SimpleService.csproj.GenerateResource.Cache
+D:\RLApplicationService\SimpleService\SimpleService\bin\Debug\SimpleService.exe.config
+D:\RLApplicationService\SimpleService\SimpleService\bin\Debug\SimpleService.exe
+D:\RLApplicationService\SimpleService\SimpleService\bin\Debug\SimpleService.pdb
+D:\RLApplicationService\SimpleService\SimpleService\obj\Debug\SimpleService.exe
+D:\RLApplicationService\SimpleService\SimpleService\obj\Debug\SimpleService.pdb
