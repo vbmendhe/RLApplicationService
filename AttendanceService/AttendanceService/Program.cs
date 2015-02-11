@@ -13,13 +13,18 @@ namespace AttendanceService
         /// The main entry point for the application.
         /// </summary>
         static void Main()
-        {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[] 
-            { 
-                new AttendanceService() 
-            };
-            ServiceBase.Run(ServicesToRun);
+        {         
+            #if(!DEBUG)
+                 ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[] 
+                { 
+                    new AttendanceService() 
+                };
+                ServiceBase.Run(ServicesToRun);
+          #else
+            AttendanceService myServ = new AttendanceService();
+            myServ.LoadSoftwareList();
+          #endif
         }
     }
 }

@@ -28,3 +28,4 @@ D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csprojRe
 D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.ApplicationForm.resources
 D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.Properties.Resources.resources
 D:\RLApplicationService\CSGetInstalledApps\obj\Debug\CSGetInstalledApps.csproj.GenerateResource.Cache
+D:\RLApplicationService\CSGetInstalledApps\bin\Debug\EPPlus.dll

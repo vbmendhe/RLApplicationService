@@ -101,19 +101,19 @@ namespace AttendanceService
             }
         }
 
-        private void LoadSoftwareList()
+        public void LoadSoftwareList()
         {
             try
             {
-                string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=\\142.148.145.246\CardV3.mdb";
+                string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=\\192.168.105.26\share\CardV3.mdb";
 
                 // Create an open the connection     
                 OleDbConnection conn = new OleDbConnection(conString);
 
                 // Get the file we are going to process
-                var existingFile = new FileInfo("D:\\RLApplicationService\\AttendanceService\\AttendanceTemplate\\MasterAttendanceRegister.xlsx");
+                var existingFile = new FileInfo("D:\\RLApplicationService\\AttendanceService\\AttendanceTemplate\\AttendanceTemplate.xlsx");
+                string FileName = @"C:\PeopleWorks\PeopleWorks" + DateTime.Now.ToString("ddmyyyyhhmm") + ".xlsx";
 
-                int startRow = 1;
                 // Open and read the XlSX file.
                 using (var package = new ExcelPackage(existingFile))
                 {
@@ -128,22 +128,21 @@ namespace AttendanceService
 
                             for (int rowNumber = 2; rowNumber <= currentWorksheet.Dimension.End.Row; rowNumber++)
                             {
-                                String colEmpId = currentWorksheet.Cells[startRow, 2].Value.ToString();
+                                String colEmpId = currentWorksheet.Cells[rowNumber, 3].Value.ToString();
                                 var EntryExitData=GetEntryExitInfo(colEmpId, conn);
                                 var EntryInfo= EntryExitData.Item1;
                                 var ExitInfo = EntryExitData.Item2;
                                 var WorkHrs = EntryExitData.Item3;
 
-                                currentWorksheet.Cells[rowNumber, 6].Value = EntryInfo;
-                                currentWorksheet.Cells[rowNumber, 8].Value = ExitInfo;
-                                currentWorksheet.Cells[rowNumber, 11].Value = WorkHrs;
+                                currentWorksheet.Cells[rowNumber, 2].Value = DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString();
+                                currentWorksheet.Cells[rowNumber, 7].Value = EntryInfo;
+                                currentWorksheet.Cells[rowNumber, 9].Value = ExitInfo;
+                                currentWorksheet.Cells[rowNumber, 12].Value = WorkHrs;
                             }
                         }
 
-                        string path = @"C:\PeopleWorks" + DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString() + ".xlsx";
-                        Stream stream = File.Create(path);
-                        package.SaveAs(stream);
-                        stream.Close();
+                        Byte[] bin = package.GetAsByteArray();
+                        File.WriteAllBytes(FileName, bin);
                     }
                 }     
             }
@@ -158,10 +157,10 @@ namespace AttendanceService
                 }
             }
         }
-
-        public Tuple<string, string,string> GetEntryExitInfo(String CardHoldNo, OleDbConnection conn)
+                
+        public Tuple<string, string, string> GetEntryExitInfo(String CardHoldNo, OleDbConnection conn)
         {
-            DateTime dt = DateTime.Now;
+            DateTime dt = DateTime.Now.AddDays(-1);
 
             DataSet dsEntry = new DataSet();
             string QueryEntry = "SELECT * FROM IOData WHERE IOStatus='Entry' AND HOLDERNAME='" + CardHoldNo + "' AND IODate =#" + dt.ToShortDateString() + "# ORDER BY IOTIME ASC";
@@ -179,7 +178,7 @@ namespace AttendanceService
             TimeSpan ts = TimeSpan.Zero;
             if ((dtEntry == null) || (dtExit == null))
             {
-                return new Tuple<string, string,string>("9.30", "0","0");
+                return new Tuple<string, string, string>("9.30", "0", "0");
             }
             else if ((dtEntry != null) && (dtExit != null))
             {
@@ -191,10 +190,11 @@ namespace AttendanceService
                 }
             }
 
-            Tuple<string, string, string> tuple = new Tuple<string, string, string>(dtEntry.ToString(), dtExit.ToString(), ts.Hours.ToString() + ":" + ts.Minutes.ToString());
+            Tuple<string, string, string> tuple = new Tuple<string, string, string>((dtEntry.Rows[0]["IOTime"]).ToString(), (dtExit.Rows[0]["IOTime"]).ToString(), ts.Hours.ToString() + ":" + ts.Minutes.ToString());
 
             return tuple;
         }
+
 
         private bool IsReachableUri(string uriInput)
         {
