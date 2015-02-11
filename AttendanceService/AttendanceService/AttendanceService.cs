@@ -110,9 +110,9 @@ namespace AttendanceService
                 // Create an open the connection     
                 OleDbConnection conn = new OleDbConnection(conString);
 
-                // Get the file we are going to process
-                var existingFile = new FileInfo("D:\\RLApplicationService\\AttendanceService\\AttendanceTemplate\\AttendanceTemplate.xlsx");
-                string FileName = @"C:\PeopleWorks\PeopleWorks" + DateTime.Now.ToString("ddmyyyyhhmm") + ".xlsx";
+                String TemplatePath = ConfigurationManager.AppSettings["TemplatePath"];
+                var existingFile = new FileInfo(TemplatePath);
+                String FileName = ConfigurationManager.AppSettings["DestinationPath"] + "PeopleWorks" + DateTime.Now.ToString("ddmyyyyhhmm") + ".xlsx";
 
                 // Open and read the XlSX file.
                 using (var package = new ExcelPackage(existingFile))
@@ -134,7 +134,7 @@ namespace AttendanceService
                                 var ExitInfo = EntryExitData.Item2;
                                 var WorkHrs = EntryExitData.Item3;
 
-                                currentWorksheet.Cells[rowNumber, 2].Value = DateTime.Now.ToLongDateString() + DateTime.Now.ToLongTimeString();
+                                currentWorksheet.Cells[rowNumber, 2].Value = DateTime.Now.ToString("dd-MMM-yyyy");
                                 currentWorksheet.Cells[rowNumber, 7].Value = EntryInfo;
                                 currentWorksheet.Cells[rowNumber, 9].Value = ExitInfo;
                                 currentWorksheet.Cells[rowNumber, 12].Value = WorkHrs;
@@ -174,28 +174,28 @@ namespace AttendanceService
 
             DataTable dtEntry = dsEntry.Tables[0];
             DataTable dtExit = dsExit.Tables[0];
-
+            
             TimeSpan ts = TimeSpan.Zero;
-            if ((dtEntry == null) || (dtExit == null))
+            if ((dtEntry.Rows.Count == 0) && (dtExit.Rows.Count == 0))
+            {
+                return new Tuple<string, string, string>("0", "0", "0");
+            }
+            else if ((dtEntry.Rows.Count == 0) || (dtExit.Rows.Count == 0))
             {
                 return new Tuple<string, string, string>("9.30", "0", "0");
             }
-            else if ((dtEntry != null) && (dtExit != null))
+            else if ((dtEntry.Rows.Count > 0) && (dtExit.Rows.Count > 0))
             {
-                if ((dtEntry.Rows.Count > 0) && (dtExit.Rows.Count > 0))
-                {
-                    DateTime dt1 = DateTime.Parse((dtEntry.Rows[0]["IOTime"]).ToString(), new DateTimeFormatInfo());
-                    DateTime dt2 = DateTime.Parse((dtExit.Rows[0]["IOTime"]).ToString(), new DateTimeFormatInfo());
-                    ts = dt2.Subtract(dt1);
-                }
+                DateTime dt1 = DateTime.Parse((dtEntry.Rows[0]["IOTime"]).ToString(), new DateTimeFormatInfo());
+                DateTime dt2 = DateTime.Parse((dtExit.Rows[0]["IOTime"]).ToString(), new DateTimeFormatInfo());
+                ts = dt2.Subtract(dt1);
             }
 
             Tuple<string, string, string> tuple = new Tuple<string, string, string>((dtEntry.Rows[0]["IOTime"]).ToString(), (dtExit.Rows[0]["IOTime"]).ToString(), ts.Hours.ToString() + ":" + ts.Minutes.ToString());
 
             return tuple;
         }
-
-
+        
         private bool IsReachableUri(string uriInput)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uriInput);

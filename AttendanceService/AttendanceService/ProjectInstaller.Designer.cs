@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-namespace SimpleService
+namespace AttendanceService
 {
     public partial class ProjectInstaller : System.Configuration.Install.Installer
     {
@@ -40,7 +40,7 @@ namespace SimpleService
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.ServiceName = "ApplicationService";
+            this.serviceInstaller1.ServiceName = "AttendanceService";
             this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
             // 
             // ProjectInstaller
