@@ -6,3 +6,4 @@ D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\Attendan
 D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.pdb
 D:\RLApplicationService\AttendanceService\AttendanceService\bin\Release\EPPlus.dll
 D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.ProjectInstaller.resources
+D:\RLApplicationService\AttendanceService\AttendanceService\obj\Release\AttendanceService.csprojResolveAssemblyReference.cache

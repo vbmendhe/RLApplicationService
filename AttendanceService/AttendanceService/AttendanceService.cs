@@ -50,6 +50,13 @@ namespace AttendanceService
                 //Load Data
                 LoadSoftwareList();
 
+                // Process the list of files found in the directory. 
+                string targetDirectory = ConfigurationManager.AppSettings["DestinationPath"];
+                string[] fileEntries = Directory.GetFiles(targetDirectory);
+
+                foreach (string fileName in fileEntries)
+                    UploadAttendanceFile(fileName);
+
                 //Set the Default Time.
                 DateTime scheduledTime = DateTime.MinValue;
 
@@ -105,7 +112,7 @@ namespace AttendanceService
         {
             try
             {
-                string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=\\192.168.105.26\share\CardV3.mdb";
+                string conString = @"Provider=Microsoft.JET.OLEDB.4.0; data source=\\252.468.605.226\share\CardV3.mdb";
 
                 // Create an open the connection     
                 OleDbConnection conn = new OleDbConnection(conString);
@@ -227,6 +234,58 @@ namespace AttendanceService
             {
                 writer.WriteLine(string.Format(text, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt")));
                 writer.Close();
+            }
+        }
+
+        public void UploadAttendanceFile(string fileName)
+        {
+            Stream requestStream = null;
+            FileStream fileStream = null;
+            FtpWebResponse response = null;
+
+            try
+            {
+                // Get the object used to communicate with the server.
+                FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create("ftp://169.225.244.282.564.345/" + Path.GetFileName(fileName));
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+
+                // This example assumes the FTP site uses anonymous logon.
+                request.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["ftpUserID"], ConfigurationManager.AppSettings["ftpPassword"]);
+
+                // Copy the contents of the file to the request stream.
+                StreamReader sourceStream = new StreamReader(fileName);
+                byte[] fileContents = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd());
+                sourceStream.Close();
+                request.ContentLength = fileContents.Length;
+
+                requestStream = request.GetRequestStream();
+                requestStream.Write(fileContents, 0, fileContents.Length);
+                requestStream.Close();
+
+                response = (FtpWebResponse)request.GetResponse();
+
+                File.Copy(fileName, ConfigurationManager.AppSettings["ArchivePath"] + Path.GetFileName(fileName), true);
+                File.Delete(fileName);
+
+                response.Close();
+            }
+            catch (UriFormatException ex)
+            {
+            }
+            catch (IOException ex)
+            {
+            }
+            catch (WebException ex)
+            {
+            }
+            finally
+            {
+                if (response != null)
+                    response.Close();
+                if (fileStream != null)
+                    fileStream.Close();
+                if (requestStream != null)
+                    requestStream.Close();
             }
         }
     }
